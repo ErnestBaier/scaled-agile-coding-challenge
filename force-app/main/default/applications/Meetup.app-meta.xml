@@ -11,6 +11,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Meetup</label>
     <navType>Standard</navType>
+    <tabs>Home</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Meetup_UtilityBar</utilityBar>
 </CustomApplication>
