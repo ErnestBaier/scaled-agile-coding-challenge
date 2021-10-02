@@ -143,7 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>This object is intended to be used to track meetups for users</description>
+    <description>This object is intended to be used to track meetups for users as part of the Meetup app</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -156,7 +156,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Meetup</label>
     <nameField>
-        <label>Meetup Name</label>
+        <label>Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Meetups</pluralLabel>
