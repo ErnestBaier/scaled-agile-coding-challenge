@@ -12,6 +12,7 @@
     <label>Meetup</label>
     <navType>Standard</navType>
     <tabs>Home</tabs>
+    <tabs>Register</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Meetup_UtilityBar</utilityBar>
 </CustomApplication>

@@ -53,7 +53,7 @@ This repository contains SFDX project files that contain the metadata for custom
 
 # Additional Questions/ Assumptions
 
-1. Should the Meetups and Meetup Registrations be searchable or will they be required to have a registation code?
+1. Should the Meetups and Meetup Registrations be searchable or will they be required to have a registation code? Assuming required due to 'The registration code that will be used to find this meetup on the registration page.' description of registration code field. Users will either have the code or directed to register page from action on Meetup record itself
 
 2. Meetups/Calendar invites typically include a date - are these left out intentionally for business purpose?
 
