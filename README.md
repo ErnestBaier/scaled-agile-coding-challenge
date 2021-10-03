@@ -50,3 +50,7 @@ When creating the registration page, keep the following in mind:
 # Setup
 
 This repository contains SFDX project files that contain the metadata for custom objects, configuration and code used to provide a solution to meet the requirements and for discussion with the development team at Scaled Agile
+
+# Additional Questions/ Assumptions
+
+1. Should the Meetups and Meetup Registrations be searchable or will they be required to have a registation code?
