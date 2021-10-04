@@ -1,3 +1,39 @@
 <template>
-    
+    <div class="spinner">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>
+        </template>
+    </div>
+    <div class="slds-box slds-theme_default slds-grid-vertical">
+        <span class="slds-text-body_regular slds-col slds-var-p-around_small">To register for a meetup, please enter the registration code below and click the 'Register' button.</span>
+        <span>
+            <lightning-input class="slds-col slds-var-p-around_small" type="text" id="registrationCodeInput" label="Registration Code" value={registrationCode} onchange={hanldeCodeChange} required></lightning-input>
+        </span>
+        <span>
+            <lightning-button class="slds-col slds-var-p-around_small" variant="brand" label="Register" onclick={handleSearch}></lightning-button>
+        </span>
+    </div>
+    <template if:true={showModal}>
+        <!-- Modal modeled after standard SLDS styling modal provided by Salesforce - https://www.lightningdesignsystem.com/components/modals/ -->
+        <section class="slds-modal slds-fade-in-open">
+            <template if:true={meetup}>
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-modal__title">To complete your registration for {meetup.Name}, please enter the info below.</h2>
+                    </header>
+                    <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+                        <lightning-input type="text" name="First_Name__c" label="First Name" required></lightning-input>
+                        <lightning-input type="text" name="Last_Name__c" label="Last Name" required></lightning-input>
+                        <lightning-input type="email" name="Email__c" label="Email" required></lightning-input>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={handleRegistration}>Register</button>
+                    </footer>
+                </div>
+            </template>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
 </template>
