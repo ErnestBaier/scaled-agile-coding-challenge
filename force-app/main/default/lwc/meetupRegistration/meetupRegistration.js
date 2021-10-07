@@ -11,7 +11,7 @@ import getSingleMeetup from '@salesforce/apex/MeetupController.getSingleMeetup';
 import createMeetupRegistration from '@salesforce/apex/MeetupRegistrationController.createMeetupRegistration';
 
 
-export default class MeetupRegistration extends LightningElement {
+export default class MeetupRegistration extends NavigationMixin(LightningElement) {
     //Modeled after recipe in lwc-recipes repo - https://github.com/trailheadapps/lwc-recipes/blob/main/force-app/main/default/lwc/apexImperativeMethodWithParams/apexImperativeMethodWithParams.js
     isLoading = false;
     showModal = false;
@@ -26,7 +26,7 @@ export default class MeetupRegistration extends LightningElement {
             console.log(currentPageReference);
             this.currentPageReference = currentPageReference;
             //?code=12345
-            this.registrationCode = this.currentPageReference.state.code;
+            this.registrationCode = this.currentPageReference.state.c__code;
         }
     }
 
@@ -94,6 +94,7 @@ export default class MeetupRegistration extends LightningElement {
                     })
                 );
                 this.showModal = false;
+                this.navToRegistration(registration);
             })
             .catch((error) => {
                 console.log(error);
@@ -106,6 +107,17 @@ export default class MeetupRegistration extends LightningElement {
                 );
             });
         this.isLoading = false;
+    }
+
+    navToRegistration(registration) {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: registration.Id,
+                objectApiName: 'Meetup_Registration__c',
+                actionName: 'view'
+            }
+        });
     }
 
     handleCancel() {
